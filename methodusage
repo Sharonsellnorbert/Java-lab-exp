@@ -1,0 +1,58 @@
+package javalab;
+import java.util.Scanner;
+class Employee1
+{
+	double salary,da,hra,salary1;
+	Employee1(double salary,double da,double hra)
+	{
+	  this.salary=salary;
+	  this.da=da;
+	  this.hra=hra;
+	}
+	void display()
+	{
+		System.out.println("employee...");
+	}
+	void calcsalary()
+	{
+		salary1=salary+(salary*(da/100))+salary*(hra/100);
+		System.out.println(salary1);
+	}
+}
+class Engineer extends Employee1
+{
+	Engineer(double salary,double da,double hra)
+	{
+		super(salary,da,hra);	
+	}
+	void display()
+	{
+	   super.display();
+	   super.calcsalary();
+	   System.out.println("Engineer.......");
+	}
+	void calcsalary()
+	{
+	  System.out.println("Gross salary of the Engineer="+salary1*2);
+	}
+}
+
+public class grossdemousingsuper 
+{
+   public static void main(String[] args)
+   {
+	   double salary,da,hra;
+	   Scanner sc=new Scanner(System.in);
+	   System.out.println("enter the basic salary of the employee..");
+	   salary=sc.nextDouble();
+	   System.out.println("enter the DA of the employee..");
+	   da=sc.nextDouble();
+	   System.out.println("enter the HRA of the employee..");
+	   hra=sc.nextDouble();
+	   Engineer e=new Engineer(salary,da,hra);
+	   e.display();
+	   e.calcsalary();
+	   sc.close();
+	   
+   }
+}
