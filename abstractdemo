@@ -1,0 +1,58 @@
+package javalab;
+abstract class Shape
+{
+	abstract void numberofsides();
+}
+		class rectangle extends Shape
+		{
+			int side;
+			rectangle(int side)
+			{
+				this.side=side;
+				
+			}
+			void numberofsides()
+			{
+				System.out.println("the number of sides of a rectangle;"+side);
+			}
+	    }
+	    class triangle extends Shape
+	    {
+	    	int side;
+	    	triangle(int side)
+	    	{
+	    		this.side=side;
+	    	}
+	    	void numberofsides()
+	    	{
+	    		System.out.println("the number of sides of a triangle;"+side);
+	    	}
+	    }
+	    class hexagon extends Shape
+	    {
+	    	int side;
+	    	hexagon(int side)
+	    	{
+	    		this.side=side;
+	    	}
+	    	void numberofsides()
+	    	{
+	    		System.out.println("the number of sides of a hexagon:"+side);
+	    	}
+	    }
+
+
+public class Abstractclassdemo 
+{
+	public static void main(String[] args)
+	{
+		rectangle r=new rectangle(4);
+		triangle t=new triangle(3);
+		hexagon h=new hexagon(6);
+		r.numberofsides();
+		t.numberofsides();
+		h.numberofsides();
+	}
+	
+
+}
