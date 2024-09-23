@@ -1,0 +1,46 @@
+package javalab;
+import java.util.Scanner;
+interface Human
+{
+	final int jobid=1012;
+	public void learn(String str);
+	public void work();
+}
+interface Recruitment
+{
+	public void screening(int score);
+}
+class Programmer implements Human,Recruitment
+{
+	public void learn(String str)
+	{
+		System.out.println("the trained area is :"+ str);
+	}
+	public void screening(int score)
+	{
+		System.out.println("the test score is :"+score);
+	}
+	public void work()
+	{
+		System.out.println("selected to the role of department");
+	}
+}
+
+public class Test11 
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		Programmer p=new Programmer();
+		System.out.println("enter ur trained area");
+		String str=sc.nextLine();
+		System.out.println("enter ur text score");
+		int score=sc.nextInt();
+		System.out.println("-------about my placement---------");
+		p.learn(str);
+		p.screening(score);
+		p.work();
+		System.out.println("the job id is :"+p.jobid);
+	}
+
+}
