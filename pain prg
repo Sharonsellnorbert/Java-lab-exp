@@ -1,0 +1,28 @@
+//prg to check the string is palindrome or not
+import java.util.Scanner;//importing scanner class to prg
+public class Test
+{
+  public static void main(String[] args)
+  {
+     Scanner sc=new Scanner(System.in);
+     System.out.println("enter the string");//string receving from user
+     String str=sc.nextLine();//string accessing from memory
+     int len=str.length();//finding string length
+     int flag=0;//initializing flag as 0
+     for(int i=0;i<len/2;i++)//loop working
+     {
+       if (str.charAt(i)!=str.charAt(len-i-1))//checking condition
+       { 
+          flag=1;//giving value for flag as 1
+       }
+     }
+     if (flag==0)//checking condition
+     {
+        System.out.println("the entered string is a palindrome");//printing the string as palindrome
+     }
+     else
+     {
+        System.out.println("the entered string is not a palindrome");//printing the string as not a palindrome
+     }
+   }
+}
